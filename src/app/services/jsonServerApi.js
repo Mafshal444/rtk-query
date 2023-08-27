@@ -5,7 +5,7 @@ export const jsonServerApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
   tagTypes: ['Albums'],
   endpoints: (builder) => ({
-    getAlbums: builder.query({
+    getAlbum: builder.query({
       query: (page = 1) => `albums?_page=${page}&_limit=10`,
       providesTags: ['Albums'],
     }),
@@ -39,8 +39,8 @@ export const jsonServerApi = createApi({
 });
 
 export const {
-  useGetAlbumsQuery,
   useCreateAlbumMutation,
+  useGetAlbumQuery,
   useUpdateAlbumMutation,
   useDeleteAlbumMutation,
 } = jsonServerApi;

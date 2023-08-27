@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   useDeleteAlbumMutation,
-  useGetAlbumsQuery,
+  useGetAlbumQuery,
 } from '../app/services/jsonServerApi';
 
 export default function Albums(props) {
@@ -14,7 +14,7 @@ export default function Albums(props) {
     isFetching,
     isError,
     error,
-  } = useGetAlbumsQuery(page);
+  } = useGetAlbumQuery(page);
 
   const [deleteAlbum] = useDeleteAlbumMutation();
 
